@@ -12,7 +12,7 @@ from a state to the next one are:
 - The task of the current state is over.
 - A minimum user defined amount of time for the current state has run out.
 
-This project has been slightly adapted to be run on a PIC32, which was its
+Later, this project has been slightly adapted to run on a PIC32, which was its
 original purpose. Thats the reason why there's an "initialization" part and an
 infinite loop to simulate the behavior of the microchip.
 
