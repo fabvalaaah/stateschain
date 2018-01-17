@@ -64,17 +64,17 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/stateschain: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/stateschain ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/State.o: State.c 
+${OBJECTDIR}/State.o: State.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -Werror -std=c89 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/State.o State.c
 
-${OBJECTDIR}/StatesChain.o: StatesChain.c 
+${OBJECTDIR}/StatesChain.o: StatesChain.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -Werror -std=c89 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/StatesChain.o StatesChain.c
 
-${OBJECTDIR}/main.o: main.c 
+${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -Werror -std=c89 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
@@ -85,7 +85,6 @@ ${OBJECTDIR}/main.o: main.c
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/stateschain
 
 # Subprojects
 .clean-subprojects:
