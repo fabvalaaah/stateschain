@@ -1,5 +1,5 @@
 # stateschain
-A POC that executes tasks one after another with minimum amounts of time
+POC that executes tasks one after another with minimum amounts of time
 garanteed between jumps, working on Linux.
 
 This is a C NetBeans project, compiled with GCC 5.4.0 and tested with Ubuntu
