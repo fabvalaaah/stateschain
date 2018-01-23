@@ -50,7 +50,7 @@
 
 #include "State.h"
 
-_State* createState(void* (*job) (void*), unsigned int delta) {
+_State* createState(void* (*job) (void*), void* params, unsigned int delta) {
     _State* state;
 
     if (!(state = malloc(sizeof (_State)))) {
@@ -58,6 +58,7 @@ _State* createState(void* (*job) (void*), unsigned int delta) {
     }
 
     state->job = job;
+    state->params = params;
     state->status = WAITING; /* Wait for the beginning */
     state->delta = delta;
     state->next = NULL;
@@ -72,7 +73,7 @@ void destroyState(_State** state) {
     }
 }
 
-void* executeStateJob(_State* state, void* params) {
+void* executeStateJob(_State* state) {
     void* returnedValue = NULL;
     struct timeval tv;
 
@@ -80,7 +81,7 @@ void* executeStateJob(_State* state, void* params) {
         return NULL;
     }
 
-    returnedValue = state->job(params);
+    returnedValue = state->job(state->params);
     if (0 >= state->delta) {
         state->status = ENDED;
     } else {

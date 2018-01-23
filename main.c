@@ -54,6 +54,7 @@ int main() {
     int exitValue = EXIT_SUCCESS;
     _State* curState;
     _StatesChain* statesChain = createStatesChain();
+    int job1Param = 42;
 
     if (!statesChain) {
         exitValue = EXIT_FAILURE;
@@ -61,42 +62,42 @@ int main() {
     }
 
     /* Preparing the STATELIST */
-    curState = createState(job1, 0);
+    curState = createState(job1, &job1Param, 0);
     if (!curState) {
         exitValue = EXIT_FAILURE;
         goto CLEAN;
     }
     addStateToStatesChain(statesChain, curState);
 
-    curState = createState(job2, 2000);
+    curState = createState(job2, NULL, 2000);
     if (!curState) {
         exitValue = EXIT_FAILURE;
         goto CLEAN;
     }
     addStateToStatesChain(statesChain, curState);
 
-    curState = createState(job3, 0);
+    curState = createState(job3, NULL, 0);
     if (!curState) {
         exitValue = EXIT_FAILURE;
         goto CLEAN;
     }
     addStateToStatesChain(statesChain, curState);
 
-    curState = createState(job4, 0);
+    curState = createState(job4, NULL, 0);
     if (!curState) {
         exitValue = EXIT_FAILURE;
         goto CLEAN;
     }
     addStateToStatesChain(statesChain, curState);
 
-    curState = createState(job5, 4000);
+    curState = createState(job5, NULL, 4000);
     if (!curState) {
         exitValue = EXIT_FAILURE;
         goto CLEAN;
     }
     addStateToStatesChain(statesChain, curState);
 
-    curState = createState(job6, 3000);
+    curState = createState(job6, NULL, 3000);
     if (!curState) {
         exitValue = EXIT_FAILURE;
         goto CLEAN;

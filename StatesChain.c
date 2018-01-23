@@ -114,7 +114,7 @@ _State* executeStatesChain(_StatesChain* statesChain) {
     switch (it->status) {
         case WAITING:
         {
-            executeStateJob(it, NULL);
+            executeStateJob(it);
             break;
         }
         case PENDING:

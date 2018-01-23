@@ -52,7 +52,9 @@
 
 /* Dumb job as an example */
 void* job1(void* param) {
-    printf("Doing the job 1\n");
+    int* value = (int*) param;
+
+    printf("Doing the job 1 with %d as param\n", *value);
 
     return NULL;
 }

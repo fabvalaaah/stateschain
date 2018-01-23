@@ -54,14 +54,15 @@ enum Status {
 
 typedef struct State {
     void* (*job) (void*); /* Pointer on a very generic function */
+    void* params; /* Parameters for the job */
     enum Status status;
     unsigned int delta; /* ms (0 for immediate execution) */
     unsigned long timestamp; /* Updated when starting the work (ms) */
     struct State* next;
 } _State;
 
-_State* createState(void* (*job) (void*), unsigned int delta);
+_State* createState(void* (*job) (void*), void* params, unsigned int delta);
 void destroyState(_State** state);
-void* executeStateJob(_State* state, void* params);
+void* executeStateJob(_State* state);
 
 #endif /* STATE_H */
