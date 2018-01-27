@@ -16,7 +16,7 @@ Later, this project has been slightly adapted to run on a PIC32, which was its
 original purpose. Thats the reason why there's an "initialization" part and an
 infinite loop to simulate the behavior of the microchip.
 
-Usage example: "stateschain".
+Usage example: "./stateschain".
 
 DONATION:
 As I share these sources for commercial use too, maybe you could consider
